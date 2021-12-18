@@ -22,28 +22,51 @@
 
 #nesting lists
 
-bamboo_species_list = {
-  "Phylostachys nigra" : "Black bamboo",
-  "Dendrocalamus minor amoenus" : "Angel Mist Ghost Bamboo",
-  "Bambusa chungii" : "Blue Chungii Bamboo"
-}
+# bamboo_species_list = {
+#   "Phylostachys nigra" : "Black bamboo",
+#   "Dendrocalamus minor amoenus" : "Angel Mist Ghost Bamboo",
+#   "Bambusa chungii" : "Blue Chungii Bamboo"
+# }
+# #include labels
+# bamboo_information = {
+#   "Bamboo Species Name" : ["Average Height", "Minimum growing zone", "Maximum growing zone", "clumping", "notes"],
+#   "Bambusa chungii" : [35, 8, 11, True, "Minimum zone is 8b?"] 
+# }
+# #dictionaries within lists
+# bamboo_dictionary_list = [
+#   {
+#   "species_name": "Dendrocalamus minor amoenus",
+#   "average_height": 35,
+#   "minimum_zone": 9,
+#   "maximum_zone": 11,
+#   "clumping": True,
+#   "notes": "Minimum zone is 9b?"
+#   }
+# ]
+# #dictionaries within dictionaries
+# bamboo_dictionary_dictionary = {
+#   "Phylostachys nigra" : {"average_height": 30, "Minimum growing zone": 7, "Maximum growing zone": 9, "clumping": False, "notes": "Shoots emerge green and turn black over years"}
+#   }
 
-bamboo_information = {
-  "Bamboo Species Name" : ["Average Height", "Minimum growing zone", "Maximum growing zone", "clumping", "notes"],
-  "Bambusa chungii" : [35, 8, 11, True, "Minimum zone is 8b?"] 
-}
-#dictionaries within lists
-bamboo_dictionary_list = [
-  {
-  "species_name": "Dendrocalamus minor amoenus",
-  "average_height": 35,
-  "minimum_zone": 9,
-  "maximum_zone": 11,
-  "clumping": True,
-  "notes": "Minimum zone is 9b?"
-  }
+#adding dictionaries to lists
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
 ]
-#dictionaries within dictionaries
-bamboo_dictionary_dictionary = {
-  "Phylostachys nigra" : {"average_height": 30, "Minimum growing zone": 7, "Maximum growing zone": 9, "clumping": False, "notes": "Shoots emerge green and turn black over years"}
-  }
+def add_new_country(name, visit, city):
+  n = {}
+  n["country"] = name
+  n["visits"] = visit
+  n["cities"] = city
+  travel_log.append(n)
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
