@@ -1,3 +1,5 @@
+from replit import clear
+
 #grading calculator
 # student_scores = {
 #   "Harry": 81,
@@ -49,24 +51,51 @@
 #   }
 
 #adding dictionaries to lists
-travel_log = [
-{
-  "country": "France",
-  "visits": 12,
-  "cities": ["Paris", "Lille", "Dijon"]
-},
-{
-  "country": "Germany",
-  "visits": 5,
-  "cities": ["Berlin", "Hamburg", "Stuttgart"]
-},
-]
-def add_new_country(name, visit, city):
-  n = {}
-  n["country"] = name
-  n["visits"] = visit
-  n["cities"] = city
-  travel_log.append(n)
+# travel_log = [
+# {
+#   "country": "France",
+#   "visits": 12,
+#   "cities": ["Paris", "Lille", "Dijon"]
+# },
+# {
+#   "country": "Germany",
+#   "visits": 5,
+#   "cities": ["Berlin", "Hamburg", "Stuttgart"]
+# },
+# ]
+# def add_new_country(name, visit, city):
+#   n = {}
+#   n["country"] = name
+#   n["visits"] = visit
+#   n["cities"] = city
+#   travel_log.append(n)
+# add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+# print(travel_log)
 
-add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
-print(travel_log)
+#Auction program
+# logo = '''
+#                          ___________
+#                          \         /
+#                           )_______(
+#                           |"""""""|_.-._,.---------.,_.-._
+#                           |       | | |               | | ''-.
+#                           |       |_| |_             _| |_..-'
+#                           |_______| '-' `'---------'` '-'
+#                           )"""""""(
+#                          /_________\\
+#                        .-------------.
+#                       /_______________\\
+# '''
+# print(logo)
+print("Welcome to the secret auction program")
+bids_list = {}
+def add_bids(bidder_name, bidder_bid):
+  bids_list[bidder_name] =  bidder_bid
+additional_bidders = "yes"
+while additional_bidders == "yes":
+  name = input("What is your name? ")
+  bid = int(input("What's your bid? $"))
+  add_bids(name, bid)
+  additional_bidders = input("Are there any other bidders? Type 'yes' or 'no'. ")
+  clear()
+print(bids_list)
