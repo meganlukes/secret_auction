@@ -89,17 +89,21 @@ logo = '''
 print(logo)
 print("Welcome to the secret auction program")
 bids_list = {}
-top_bid = 0
-def add_bids(bidder_name, bidder_bid):
-  bids_list[bidder_name] =  bidder_bid
 additional_bidders = "yes"
+
+def top_bid(bids_record):
+  highest_bid = 0
+  winner = ""
+  for bidder in bids_record:
+    bid_value = bids_record[bidder]
+    if bid_value > highest_bid:
+      highest_bid = bid_value
+      winner = bidder
+  print(f"The winner is {winner} with a bid of ${highest_bid}")
 while additional_bidders == "yes":
   name = input("What is your name? ")
   bid = int(input("What's your bid? $"))
-  add_bids(name, bid)
+  bids_list[name] = bid
   additional_bidders = input("Are there any other bidders? Type 'yes' or 'no'. ")
   clear()
-for bid in bids_list:
-  if bids_list[bid] > top_bid:
-    top_bid = bids_list[bid]
-winner  = bids_list[top_bid]
+top_bid(bids_list)
