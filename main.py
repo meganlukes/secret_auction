@@ -73,22 +73,23 @@ from replit import clear
 # print(travel_log)
 
 #Auction program
-# logo = '''
-#                          ___________
-#                          \         /
-#                           )_______(
-#                           |"""""""|_.-._,.---------.,_.-._
-#                           |       | | |               | | ''-.
-#                           |       |_| |_             _| |_..-'
-#                           |_______| '-' `'---------'` '-'
-#                           )"""""""(
-#                          /_________\\
-#                        .-------------.
-#                       /_______________\\
-# '''
-# print(logo)
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+print(logo)
 print("Welcome to the secret auction program")
 bids_list = {}
+top_bid = 0
 def add_bids(bidder_name, bidder_bid):
   bids_list[bidder_name] =  bidder_bid
 additional_bidders = "yes"
@@ -98,4 +99,7 @@ while additional_bidders == "yes":
   add_bids(name, bid)
   additional_bidders = input("Are there any other bidders? Type 'yes' or 'no'. ")
   clear()
-print(bids_list)
+for bid in bids_list:
+  if bids_list[bid] > top_bid:
+    top_bid = bids_list[bid]
+winner  = bids_list[top_bid]
